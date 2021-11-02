@@ -18,7 +18,7 @@
                 <img :src="logo" alt="logo" width="80%">
             </div>
 
-            <input type="text" placeholder="Nuovo Todo" class="txt_input" v-model="newTask" @keyup.enter="addTask">
+            <input type="text" placeholder="Nuovo To Do" class="txt_input" v-model="newTask" @keyup.enter="addTask">
             <button class="add_btn" @click="addTask">Aggiungi task</button> 
 
             <p class="error" v-if="error">Inserisci un vero task!</p>
@@ -36,13 +36,22 @@
                                 <!-- <i class="far fa-check-circle fa-lg"></i> -->
                             </button>
 
-                            <p>
-                                {{task}}
-                            </p>
-        
-                            <button class="btn delete_btn" @click="deleteTask(index)">
-                                <i class="fas fa-times"></i>
-                            </button>
+                            <p>{{task}}</p>
+
+                            <div class="right_pos">
+                                <button class="btn edit_btn" @click="handleEdit(task)">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+
+                                <button class="btn delete_btn" @click="deleteTask(index)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+
+                            <div class="edit_task" v-if="edit">
+                                <input type="text" placeholder="Modifica To do" class="task_edit" v-model="editTxt" @keyup.enter="editTask">
+                                <button @click="editTask"></button>
+                            </div>
                         </div>
                     </div>
                     <div v-else>

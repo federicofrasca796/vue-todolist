@@ -52,11 +52,23 @@ body{
     overflow-y: auto;
     height: 150px;
 }
+
+.task{
+    position: relative;
+}
 .task > p{
     display: inline-block;
-    width: 90%;
+    /* width: 90%; */
     padding: .3rem;
 }
+.right_pos{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+
+
 .btn{
     background-color: transparent;
     border: none;
@@ -65,6 +77,7 @@ body{
 
 .delete_btn{
     color: #ff0059;
+    margin-left: .5rem;
 }
 .btn.delete_btn:hover{
     color: #fc71a2;
@@ -80,6 +93,10 @@ body{
 }
 .btn.complete_btn:hover{
     padding: 2px;
-    background-color: #011533b4;
+    background-color: #2567FD;
     background-clip: content-box;
+}
+
+.edit_btn{
+    color: #2567FD;
 }

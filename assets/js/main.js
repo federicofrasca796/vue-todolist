@@ -11,6 +11,9 @@ const app = new Vue({
         logo: 'https://www.boolean.careers/images/misc/logo.png',
 
         error: false,
+
+        editTxt: '',
+        edit: false,
     },
 
     methods:{
@@ -33,6 +36,15 @@ const app = new Vue({
 
             //remove task from tasks array
             this.tasks.splice(index,1);
-        }
+        },
+
+        handleEdit(task){
+            this.edit = true;
+            console.log(task);
+        },
+
+        editTask(){
+            //show edit section
+        },
     },
 })
