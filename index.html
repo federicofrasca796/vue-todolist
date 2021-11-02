@@ -14,14 +14,30 @@
     
     <div id="app">
         <header>
-            <img :src="logo" alt="logo" width="100%">
+            <div class="logo">
+                <img :src="logo" alt="logo" width="20%">
+            </div>
 
             <input type="text" placeholder="Nuovo Todo">
-            <button>Aggiungi</button>
+            <button>Aggiungi</button> 
         </header>
 
+        <main>
+            <div v-if="tasks.length > 0">
+                <div class="task" v-for="(task, index) in tasks">
+                    {{task}}
+                    <button @click="deleteTask(index)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div v-else>
+                <p>Nulla da fare</p>
+            </div>
 
-        <div class="tasks"></div>
+        </main>
+
+
 
     </div>
     
