@@ -3,3 +3,83 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #011533;
+}
+.container{
+    width: 500px;
+    max-width: 500px;
+    margin: auto;
+}
+.logo{
+    text-align: center;
+    margin: 2rem 0;
+}
+.txt_input{
+    margin: 1rem 0;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid #888;
+}
+.add_btn{
+    margin: auto;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #01E165;
+    background-color: #01E165;
+    font-weight: 700;
+}
+.error{
+    text-align: center;
+    color: #FB4A88;
+    margin: 1rem 0;
+}
+.todo_section{
+    padding: .5rem 1rem;
+    background-color: #2566fd1a;
+    margin: 1rem 0;
+}
+.section_heading{
+    font-size: 1.5rem;
+    margin: .5rem 0;
+}
+.section_content{
+    overflow-y: auto;
+    height: 150px;
+}
+.task > p{
+    display: inline-block;
+    width: 90%;
+    padding: .3rem;
+}
+.btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.delete_btn{
+    color: #ff0059;
+}
+.btn.delete_btn:hover{
+    color: #fc71a2;
+}
+
+.btn.complete_btn{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 2px solid #011533;
+    vertical-align: middle;
+    
+}
+.btn.complete_btn:hover{
+    padding: 2px;
+    background-color: #011533b4;
+    background-clip: content-box;
+}

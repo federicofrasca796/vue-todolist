@@ -12,33 +12,43 @@
 </head>
 <body>
     
-    <div id="app">
+    <div class="container" id="app">
         <header>
             <div class="logo">
-                <img :src="logo" alt="logo" width="20%">
+                <img :src="logo" alt="logo" width="80%">
             </div>
 
-            <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addTask">
-            <button @click="addTask">Aggiungi</button> 
+            <input type="text" placeholder="Nuovo Todo" class="txt_input" v-model="newTask" @keyup.enter="addTask">
+            <button class="add_btn" @click="addTask">Aggiungi task</button> 
 
-            <p v-if="error">Inserisci un vero task!</p>
+            <p class="error" v-if="error">Inserisci un vero task!</p>
         </header>
 
         <main>
-            <div v-if="tasks.length > 0">
-                <div class="task" v-for="(task, index) in tasks">
-                    {{task}}
+            <div class="todo_section">
+                <h1 class="section_heading">To Do</h1>
+                <div class="section_content">
 
-                    <button @click="completeTask(index)">
-                        <i class="far fa-check-circle"></i>
-                    </button>
-                    <button @click="deleteTask(index)">
-                        <i class="fas fa-times"></i>
-                    </button>
+                    <div v-if="tasks.length > 0">
+                        <div class="task" v-for="(task, index) in tasks">
+                            <button class="btn complete_btn" @click="completeTask(index)">
+                                <!-- <i class="far fa-circle fa-lg"></i> -->
+                                <!-- <i class="far fa-check-circle fa-lg"></i> -->
+                            </button>
+
+                            <p>
+                                {{task}}
+                            </p>
+        
+                            <button class="btn delete_btn" @click="deleteTask(index)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p>Nulla da fare</p>
+                    </div>
                 </div>
-            </div>
-            <div v-else>
-                <p>Nulla da fare</p>
             </div>
 
         </main>
