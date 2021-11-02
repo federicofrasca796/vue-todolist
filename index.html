@@ -33,25 +33,14 @@
                         <div class="task" v-for="(task, index) in tasks">
                             
                             <button class="btn complete_btn" @click="completeTask(index)"></button>
-                            
-                            <!-- <template v-if="edit[index]" class="edit_task">
-                                <input type="text" placeholder="Modifica To do" class="task_edit" v-model="tasks[index]" @keyup.enter="editTask">
-                                <button @click="editTask"></button>
-                            </template> -->
-                            <!-- <input>{{task}}</input> -->
 
                             <input type="text" placeholder="Edit" v-model="tasks[index]" @keyup.enter="editTask(index)">
 
                             <div class="right_pos">
-                                <!-- <button class="btn edit_btn" @click="handleEdit(index)">
-                                    <i class="fas fa-pen"></i>
-                                </button> -->
-                                <div v-if="edited">
-                                    <i class="fas fa-check"></i>
-                                </div>
 
                                 <button class="btn delete_btn" @click="deleteTask(index)">
-                                    <i class="fas fa-times"></i>
+                                    <!-- <i class="fas fa-times"></i> -->
+                                    <i class="fas fa-minus"></i>
                                 </button>
                             </div>
                             
@@ -70,9 +59,31 @@
 
                     <div class="task" v-for="(task, index) in completeTasks">
                         
-                        <i class="fas fa-check    "></i>
+                        <i class="fas fa-check"></i>
 
-                        <p>{{ completeTasks[index] }}</p>
+                        <p>{{task}}</p>
+                    
+                        <div class="right_pos">
+                                                                
+                            <button class="btn delete_btn" @click="discardCompleted(index)">
+                                <!-- <i class="fas fa-times"></i> -->
+                                <i class="fas fa-minus-square"></i>
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deleted section">
+                <h1 class="section_heading">Deleted</h1>
+
+                <div class="section_content">
+
+                    <div class="task" v-for="(task, index) in deletedTasks">
+                        
+                        <i class="fas fa-times"></i>
+                        <p>{{task}}</p>
                     
                         <div class="right_pos">
                                                                 
@@ -82,7 +93,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </main>

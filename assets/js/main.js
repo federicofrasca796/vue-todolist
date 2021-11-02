@@ -7,6 +7,7 @@ const app = new Vue({
             "Contemplare il proprio amore per VueJS",
         ],
         completeTasks: [],
+        deletedTasks: [],
         newTask: '',
         logo: 'https://www.boolean.careers/images/misc/logo.png',
 
@@ -19,7 +20,9 @@ const app = new Vue({
 
     methods:{
         deleteTask(index){
+            this.deletedTasks.push(this.tasks[index])
             this.tasks.splice(index, 1);
+            console.log(this.deletedTasks);
         },
 
         addTask(){
@@ -35,6 +38,7 @@ const app = new Vue({
             //push completed task in completeTasks array
             this.completeTasks.push(this.tasks[index]);
             console.log(this.tasks[index]);
+            
             //remove task from tasks array
             this.tasks.splice(index,1);
         },
