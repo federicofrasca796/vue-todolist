@@ -39,10 +39,12 @@ body{
     color: #FB4A88;
     margin: 1rem 0;
 }
-.todo_section{
+.section{
     padding: .5rem 1rem;
-    background-color: #2566fd1a;
     margin: 1rem 0;
+}
+.todo{
+    background-color: #2566fd1a;
 }
 .section_heading{
     font-size: 1.5rem;
@@ -105,4 +107,10 @@ body{
     border: 1px solid transparent;
     background-color: transparent;
     width: 80%;
+}
+
+
+.completed{
+    background-color: #01e1663a;
+
 }
