@@ -6,6 +6,7 @@ const app = new Vue({
             "Completare il bonus.",
             "Contemplare il proprio amore per VueJS",
         ],
+        completeTasks: [],
         newTask: '',
         logo: 'https://www.boolean.careers/images/misc/logo.png',
 
@@ -14,8 +15,7 @@ const app = new Vue({
 
     methods:{
         deleteTask(index){
-            this.tasks.splice(index, 1)
-            console.log(this.tasks);
+            this.tasks.splice(index, 1);
         },
 
         addTask(){
@@ -26,5 +26,13 @@ const app = new Vue({
                 this.error = true;
             }
         },
+
+        completeTask(index){
+            //push completed task in completeTasks array
+            this.completeTasks.push(this.tasks[index]);
+
+            //remove task from tasks array
+            this.tasks.splice(index,1);
+        }
     },
 })
