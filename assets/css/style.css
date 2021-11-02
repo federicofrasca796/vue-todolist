@@ -100,3 +100,9 @@ body{
 .edit_btn{
     color: #2567FD;
 }
+
+.task > input{
+    border: 1px solid transparent;
+    background-color: transparent;
+    width: 80%;
+}

@@ -13,7 +13,8 @@ const app = new Vue({
         error: false,
 
         editTxt: '',
-        edit: false,
+        // edit: [false, false, false]
+        edited: false
     },
 
     methods:{
@@ -38,13 +39,16 @@ const app = new Vue({
             this.tasks.splice(index,1);
         },
 
-        handleEdit(task){
-            this.edit = true;
-            console.log(task);
+        handleEdit(index){
+            this.edit[index] = true;
+            console.log(this.edit);
+            console.log(this.edit[index]);
         },
 
-        editTask(){
-            //show edit section
+        editTask(index){
+            alert(`Hai modificato il task. Il nuovo task è: ${this.tasks[index]}`)
         },
     },
 })
+
+console.log(app.edit)

@@ -31,27 +31,30 @@
 
                     <div v-if="tasks.length > 0">
                         <div class="task" v-for="(task, index) in tasks">
-                            <button class="btn complete_btn" @click="completeTask(index)">
-                                <!-- <i class="far fa-circle fa-lg"></i> -->
-                                <!-- <i class="far fa-check-circle fa-lg"></i> -->
-                            </button>
+                            
+                            <button class="btn complete_btn" @click="completeTask(index)"></button>
+                            
+                            <!-- <template v-if="edit[index]" class="edit_task">
+                                <input type="text" placeholder="Modifica To do" class="task_edit" v-model="tasks[index]" @keyup.enter="editTask">
+                                <button @click="editTask"></button>
+                            </template> -->
+                            <!-- <input>{{task}}</input> -->
 
-                            <p>{{task}}</p>
+                            <input type="text" placeholder="Edit" v-model="tasks[index]" @keyup.enter="editTask(index)">
 
                             <div class="right_pos">
-                                <button class="btn edit_btn" @click="handleEdit(task)">
+                                <!-- <button class="btn edit_btn" @click="handleEdit(index)">
                                     <i class="fas fa-pen"></i>
-                                </button>
+                                </button> -->
+                                <div v-if="edited">
+                                    <i class="fas fa-check"></i>
+                                </div>
 
                                 <button class="btn delete_btn" @click="deleteTask(index)">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-
-                            <div class="edit_task" v-if="edit">
-                                <input type="text" placeholder="Modifica To do" class="task_edit" v-model="editTxt" @keyup.enter="editTask">
-                                <button @click="editTask"></button>
-                            </div>
+                            
                         </div>
                     </div>
                     <div v-else>
