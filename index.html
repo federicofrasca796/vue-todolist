@@ -18,7 +18,7 @@
                 <img :src="logo" alt="logo" width="20%">
             </div>
 
-            <input type="text" placeholder="Nuovo Todo" v-model="newTask">
+            <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addTask">
             <button @click="addTask">Aggiungi</button> 
 
             <p v-if="error">Inserisci un vero task!</p>
