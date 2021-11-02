@@ -34,21 +34,26 @@ const app = new Vue({
         completeTask(index){
             //push completed task in completeTasks array
             this.completeTasks.push(this.tasks[index]);
-
+            console.log(this.tasks[index]);
             //remove task from tasks array
             this.tasks.splice(index,1);
         },
 
-        handleEdit(index){
+        /* handleEdit(index){
             this.edit[index] = true;
             console.log(this.edit);
             console.log(this.edit[index]);
-        },
+        }, */
 
         editTask(index){
             alert(`Hai modificato il task. Il nuovo task è: ${this.tasks[index]}`)
         },
+
+        discardCompleted(index){
+            this.tasks.push(this.completeTasks[index]);
+            
+            this.completeTasks.splice(index, 1);
+        }
+
     },
 })
-
-console.log(app.edit)
